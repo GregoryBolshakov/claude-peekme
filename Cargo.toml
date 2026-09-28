@@ -1,0 +1,24 @@
+[package]
+name = "claude-peekme"
+version = "0.0.1"
+edition = "2024"
+description = "Select text in Claude Code output and get a short explanation right next to it, inside the terminal"
+authors = ["Gregory Bolshakov"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/GregoryBolshakov/claude-peekme"
+readme = "README.md"
+keywords = ["claude", "terminal", "cli", "explain", "tui"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+alacritty_terminal = "0.26"
+anyhow = "1"
+arboard = { version = "3.6", default-features = false }
+crossterm = "0.29"
+portable-pty = "0.9"
+serde_json = "1"
+signal-hook = "0.3"
+unicode-width = "0.2"
+
+[profile.release]
+lto = "thin"
